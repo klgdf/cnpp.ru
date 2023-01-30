@@ -1,0 +1,133 @@
+/* BEGIN CUSTOM STYLES */
+
+.pointer,
+label,
+[onclick] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+a,
+.a,
+a:before,
+.a:before,
+a:after,
+.a:after,
+.home,
+.self,
+label {
+	transition: 0.2s;
+}
+a:hover {
+	text-decoration: none !important;
+}
+a:active,
+a:focus {
+	color: inherit;
+}
+
+.wrapper {
+	position: relative;
+}
+
+// Fix footer if content is empty
+@mixin fix-footer() {
+	.wrapper.fix-footer {
+		min-height: 100vh;
+	}
+
+	.wrapper.fix-footer .footer {
+		position: absolute;
+		z-index: 3;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+	}
+}
+//@include fix-footer();
+
+@mixin overflow-hidden() {
+	.overflow-hidden {
+		overflow: hidden;
+	}
+}
+//@include overflow-hidden();
+
+@mixin visibility-hidden() {
+	.visibility-hidden {
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+//@include visibility-hidden();
+
+@mixin modal() {
+	.overlay {
+		position: fixed;
+		z-index: 101;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow: hidden;
+		visibility: visible;
+		background: rgba(41, 41, 41, 0.6);
+		transition: 0.3s;
+	}
+	.overlay.hidden {
+		z-index: -1;
+		visibility: hidden;
+		display: inherit;
+		opacity: 0;
+	}
+
+	.overflow {
+		display: flex;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-x: hidden;
+	}
+
+	.overflow__box {
+		position: relative;
+		z-index: 1;
+	}
+
+	.overflow__box_close {
+		position: absolute;
+		z-index: 99;
+		top: 12px;
+		right: 12px;
+		width: 16px;
+		height: 16px;
+	}
+
+	.overflow__close {
+		cursor: pointer;
+		position: fixed;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
+@include modal();
+/* END CUSTOM STYLES */
+
+/*
+	Размеры относительны 320px
+*/
+$baseViewportSize: 100;
+
+@function pxtovw($fz, $viewport: $baseViewportSize) {
+	@return $viewport / 100 * $fz * 0.1vw; //* 4.16
+}
+
+// Пересчет px в em
+@function em($pixels, $context: $browser-context) {
+	@return #{$pixels/$context}em;
+}
