@@ -1,0 +1,111 @@
+@mixin padding-x($max: 1, $padding_size: $offset_global) {
+  @for $i from 0 through $max {
+    .px#{$i} {
+      padding-left: $padding_size * $i;
+      padding-right: $padding_size * $i;
+    }
+  }
+}
+@include padding-x(2, 10px);
+
+@mixin padding-y($max: 1, $padding_size: $offset_global) {
+  @for $i from 0 through $max {
+    .py#{$i} {
+      padding-top: $padding_size * $i;
+      padding-bottom: $padding_size * $i;
+    }
+  }
+}
+@include padding-y(8, 10px);
+
+@mixin padding-top($max: 1, $padding_size: $offset_global) {
+  @for $i from 0 through $max {
+    .pt#{$i} {
+      padding-top: $padding_size * $i;
+    }
+  }
+}
+@include padding-top(2, 10px);
+
+@mixin padding-left($max: 1, $padding_size: $offset_global) {
+  @for $i from 0 through $max {
+    .pl#{$i} {
+      padding-left: $padding_size * $i;
+    }
+  }
+}
+@include padding-left(2, 10px);
+
+@mixin padding-right($max: 1, $padding_size: $offset_global) {
+  @for $i from 0 through $max {
+    .pr#{$i} {
+      padding-right: $padding_size * $i;
+    }
+  }
+}
+@include padding-right(2, 10px);
+
+@mixin padding-bottom($max: 1, $padding_size: $offset_global) {
+  @for $i from 0 through $max {
+    .pb#{$i} {
+      padding-bottom: $padding_size * $i;
+    }
+  }
+}
+@include padding-bottom(2, 10px);
+
+@mixin margin-x($max: 1, $margin_size: $offset_global) {
+  @for $i from 0 through $max {
+    .mx#{$i} {
+      margin-left: $margin_size * $i;
+      margin-right: $margin_size * $i;
+    }
+  }
+}
+//@include margin-x();
+
+@mixin margin-y($max: 1, $margin_size: $offset_global) {
+  @for $i from 0 through $max {
+    .my#{$i} {
+      margin-top: $margin_size * $i;
+      margin-bottom: $margin_size * $i;
+    }
+  }
+}
+//@include margin-y();
+
+@mixin margin-top($max: 1, $margin_size: $offset_global) {
+  @for $i from 0 through $max {
+    .mt#{$i} {
+      margin-top: $margin_size * $i;
+    }
+  }
+}
+@include margin-top(0, 10px);
+
+@mixin margin-left($max: 1, $margin_size: $offset_global) {
+  @for $i from 0 through $max {
+    .ml#{$i} {
+      margin-left: $margin_size * $i;
+    }
+  }
+}
+@include margin-left(3);
+
+@mixin margin-right($max: 1, $margin_size: $offset_global) {
+  @for $i from 0 through $max {
+    .mr#{$i} {
+      margin-right: $margin_size * $i;
+    }
+  }
+}
+@include margin-right(3);
+
+@mixin margin-bottom($max: 1, $margin_size: $offset_global) {
+  @for $i from 0 through $max {
+    .mb#{$i} {
+      margin-bottom: $margin_size * $i;
+    }
+  }
+}
+@include margin-bottom(6);

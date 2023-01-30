@@ -1,0 +1,30 @@
+@mixin center
+  display: flex
+  justify-content: center
+  align-items: center
+
+@mixin space-center
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+@mixin height-justify
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+@mixin height-center
+  display: flex
+  flex-direction: column
+  justify-content: center
+  height: 100%
+
+@mixin bg-center
+  background-position: center
+  +bg
+
+@mixin bg
+  background-size: cover
+  background-repeat: no-repeat
+
+
