@@ -1,0 +1,39 @@
+section.section.form
+  .form-container.container
+    h2.title.title-h2.form__title Запись на первичный приём к специалисту
+    .line
+    .description.form__description Оставьте заявку на первичный приём к одному из наших специалистов. Если Вы испытываете трудности с определением подходящего специалиста, выберите пункт «Не могу определиться со специалистом», тогда с Вами свяжется администратор. Если Вы оставите краткое описание своих проблем, это значительно ускорит процесс подбора специалиста.
+    .form__row.form__row_3
+      .form__item
+        p
+          label Имя*
+          span.wpcf7-form-control-wrap
+            input(type="text" name="name_form" required size="40").wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required
+      .form__item
+        p
+          label Фамилия*
+          span.wpcf7-form-control-wrap
+            input(type="text" name="sername_form" required size="40").wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required
+      .form__item
+        p
+          label E-mail*
+          span.wpcf7-form-control-wrap
+            input(type="email" name="email_form" required size="40").wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required
+    .form__row.form__row_2
+      .form__item
+        p
+          label Телефон*
+          span.wpcf7-form-control-wrap
+            input(type="phone" name="phone_form" required size="40").wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required
+      .form__item
+        p
+          label Выберите специалиста
+          select(name="expert-name" id="expert-name" data-custom-select-class="select").wpcf7-form-control.wpcf7-select.form-select.select
+            option(value="")
+            option(value="Не могу определиться со специалистом") Не могу определиться со специалистом
+            option(value="Николай Головаха") Николай Головаха
+            option(value="Валерия Герасимова") Валерия Герасимова
+    p
+      span.wpcf7-form-control-wrap
+        textarea(cols="30" rows="10" placeholder="Кратко опишите проблему (необязательно)" name="message").wpcf7-form-control.wpcf7-textarea
+    input(type="submit" value="Отправить").form__submit.btn

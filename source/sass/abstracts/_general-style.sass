@@ -26,20 +26,28 @@ html
 body
   position: relative
   overflow-x: hidden
-  font-weight: 400
+  font-family: 'Manrope', sans-serif
+  font-weight: 300
   font-style: normal
-  font-size: 15px
-  line-height: 1.6
+  font-size: $size_text
+  line-height: $lh_text
   color: $color_text_1
   background: #fff
+
+.container
+  max-width: 1860px
+  margin: 0 auto
+  padding: 0 30px
+  @media (max-width: 767px)
+    padding: 0 15px
 
 .title
   font-weight: 400
   font-style: normal
   line-height: 1.3
   &.title-h2
-    font-size: 44px
-    color: $color_title_2
+    font-size: 26px
+    color: $color_primary_dark
     @media (max-width: 767px)
       text-align: center
       font-size: 25px
@@ -53,8 +61,111 @@ body
       text-align: center
       font-size: 25px
       line-height: 1.3
-  &.title-footer
-    color: $color_title_2
-    @media (max-width: 767px)
-      margin: 0 auto 40px
 
+.section
+  padding: 50px 0
+  &.form
+    padding-bottom: 80px
+
+.socials
+  display: flex
+  align-items: center
+  &__icon
+    height: auto
+    object-fit: cover
+
+.select
+  position: relative
+  height: 30px
+  border: 1px solid $color_primary
+  &--active
+    z-index: 1
+    & .select__toggle::after
+      transform: rotate(180deg)
+    & .select__options
+      visibility: visible
+  &_fillet
+    & .select__toggle
+      color: #333
+  &::after
+    content: ''
+    position: absolute
+    z-index: -1
+    right: 0
+    top: 0
+    bottom: 0
+    width: 30px
+    border-left: 1px solid $color_primary
+  &__toggle
+    display: flex
+    align-items: center
+    position: relative
+    height: 100%
+    width: 100%
+    font-size: 13px
+    color: #aaa9a9
+    padding: 0 15px
+    border: none
+    outline: 0
+    cursor: pointer
+    &::after
+      content: ''
+      position: absolute
+      right: 8px
+      top: 11.5px
+      display: block
+      width: 14px
+      height: 7px
+      background-size: cover
+      background-repeat: no-repeat
+      background-image: url(../img/arrow.svg)
+      transition: $transition
+  &__options
+    position: absolute
+    width: calc(100% + 2px)
+    top: 100%
+    margin: 0 -1px -1px
+    display: flex
+    flex-direction: column
+    background: #fff
+    border: 1px solid $color_primary
+    padding-bottom: 8px
+    visibility: hidden
+    max-height: 248px
+    overflow: auto
+  &__option
+    font-size: 13px
+    color: #aaa9a9
+    padding: 10px 15px
+    width: 100%
+    background: #fff
+    outline: 0
+    text-align: left
+    border: none
+    cursor: pointer
+    &:first-child
+      display: none
+
+select
+  display: none
+
+input
+  &:focus-visible
+    border-bottom: none!important
+
+input, textarea
+  padding: 7px 10px
+  color: #333
+  font-size: 13px
+  &:focus-visible
+    outline: 2px solid $color_primary_dark!important
+
+textarea
+  overflow: auto
+
+.line
+  display: block
+  width: 50px
+  height: 1px
+  background: $color_primary_dark
+  margin: 20px 0

@@ -3,7 +3,7 @@
 
 /* BEGIN BASE FUNCTIONS */
 
-// Модальные окна.
+// modal
 function modalOpen(eID) {
   document.querySelector('html').classList.add('overflow-hidden');
   let element = document.getElementById(eID);
@@ -21,19 +21,16 @@ function modalToggle(eID) {
 }
 /* END BASE FUNCTIONS */
 
-
-// const smoothLinks = document.querySelectorAll('a[href^="#"]');
-// for (let smoothLink of smoothLinks) {
-//   smoothLink.addEventListener('click', function (e) {
-//     e.preventDefault();
-//     const id = smoothLink.getAttribute('href');
-
-//     document.querySelector(id).scrollIntoView({
-//       behavior: 'smooth',
-//       block: 'start'
-//     });
-//   });
-// };
+//fixed header
+window.addEventListener('scroll', function (e) {
+  if (document.querySelector('html').scrollTop > 0) {
+    document.querySelector('header').classList.add("fixed");
+    document.querySelector('body').classList.add("h-f");
+  } else {
+    document.querySelector('header').classList.remove("fixed");
+    document.querySelector('body').classList.remove("h-f");
+  }
+});
 
 function footer() {
   if (document.querySelector('footer')) {
@@ -41,14 +38,19 @@ function footer() {
   }
 }
 
+function currentYear() {
+  let year = document.querySelector('.current-year');
+  year.innerHTML = new Date().getFullYear();
+}
 
-// Основной код после загрузки страницы.
+
+// General code before loading page
 document.addEventListener('DOMContentLoaded', function () {
 
-
-  (function () { // Базовые функции
+  (function () { // base functions
     documentClicks();
     footer();
+    currentYear();
   }());
 });
 

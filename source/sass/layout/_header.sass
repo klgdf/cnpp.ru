@@ -1,0 +1,146 @@
+.header
+  position: fixed
+  left: 0
+  right: 0
+  box-shadow: rgb(0 0 0 / 12%) 0 1px 3px
+  background: #fff
+  z-index: 5
+  transition: $transition
+  &.fixed
+    top: 0
+    & .header-logo
+      @media (min-width: 1169px)
+        display: none
+    & .header__row-1
+      @media (min-width: 1169px)
+        height: 0
+        visibility: hidden
+        padding: 0
+  & .menu
+    +center
+    gap: 45px
+    margin-bottom: 0
+    &-item
+      position: relative
+      & > a
+        text-transform: uppercase
+        transition: $transition
+      &:hover > ul
+        visibility: visible
+        opacity: 1
+  &-logo
+    &__link
+      width: auto
+  &__row
+    +center
+    @media (max-width: 1170px)
+      +space-center
+    &-1
+      visibility: visible
+      padding: 30px 0
+      transition: $transition
+      @media (max-width: 1170px)
+        padding: 15px 0
+    &-2
+      @media (max-width: 1170px)
+        display: none
+      @media (max-width: 991px)
+        display: block
+        position: fixed
+        left: 0
+        top: 0
+        bottom: 0
+        background: #fff
+        width: -webkit-max-content
+        width: -moz-max-content
+        width: max-content
+        padding: 60px 40px 22px calc((100% - 740px) / 2 + 15px)
+      &.hd
+        @media (max-width: 992px)
+          z-index: -1
+          visibility: hidden
+          display: inherit
+          opacity: 0
+
+.info
+  padding: 10px 0
+  background: #94afb7
+  color: #fff
+  font-size: 16px
+  font-weight: 500
+  &-container
+    +space-center
+    @media (max-width: 767px)
+      +center
+      flex-direction: column
+      gap: 8px
+  &__separator
+    padding: 0 5px
+  &__socials
+    gap: 20px
+    & .socials__link
+      width: 25px
+      height: auto
+      object-fit: cover
+      @media (max-width: 767px)
+        width: 17px
+
+.menu-item-has-children
+  & > a
+    display: flex !important
+    align-items: center
+    &::after
+      content: "›"
+      display: block
+      transform: rotate(90deg)
+      margin-left: 8px
+
+.sub-menu
+  display: block
+  position: absolute
+  width: max-content
+  top: 36px
+  left: -20px
+  padding-bottom: 8px
+  box-shadow: rgb(0 0 0 / 12%) 0 2px 2px
+  background: #fff
+  margin-bottom: 0
+  visibility: hidden
+  opacity: 0
+  z-index: 1
+  transition: $transition
+  & > li > a
+    display: block
+    padding: 8px 20px
+    font-size: 14px
+    color: #262729
+    text-indent: 0
+    height: auto
+    transition: $transition
+
+.header__menu
+  display: none
+  position: relative
+  cursor: pointer
+  margin: auto 0
+  width: 50px
+  height: 50px
+  @media (max-width: 1170px)
+    display: flex
+  & div
+    width: 30px
+    height: 2px
+    margin: auto
+    background: #333
+    cursor: pointer
+    &::after, &::before
+      content: ''
+      position: absolute
+      display: block
+      width: 30px
+      height: 2px
+      background: #333
+    &::before
+      top: 15px
+    &::after
+      bottom: 15px

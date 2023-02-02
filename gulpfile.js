@@ -167,12 +167,12 @@ function html() {
 
 function css() {
   return src(path.src.scss)
-    .pipe(plumber(
-      // notify.onError({
-      //   title: 'SCSS',
-      //   message: 'Error: <%= error.message %>'
-      // })
-    ))
+    // .pipe(plumber(
+    //   // notify.onError({
+    //   //   title: 'SCSS',
+    //   //   message: 'Error: <%= error.message %>'
+    //   // })
+    // ))
     .pipe(replace(/@img\//g, '../img/'))
     .pipe(
       sass()

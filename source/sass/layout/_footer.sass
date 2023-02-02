@@ -1,0 +1,106 @@
+.footer
+  color: #a0a4b1
+  font-weight: 300
+  &__row
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 40px
+    padding-top: 30px!important
+    padding-bottom: 30px!important
+    background: #e9eaee
+    @media ((max-width: 991px) and (min-width: 767px))
+      grid-template-columns: repeat(8, 1fr)
+      grid-template-areas: "a a a a b b b b""..c c c c .."
+      gap: 30px
+    @media (max-width: 767px)
+      grid-template-columns: repeat(1, 1fr)
+  &-title
+    color: $color_title_1
+    font-weight: 400
+    margin-bottom: 12px
+    text-transform: uppercase
+    @media (max-width: 991px)
+      margin-bottom: 10px
+  &-col
+    @media ((max-width: 991px) and (min-width: 767px))
+      &-1
+        grid-area: a
+      &-2
+        grid-area: b
+      &-3
+        grid-area: c
+  &-description
+    max-width: 414px
+  &-btn
+    margin-top: 20px
+  &-menu
+    margin-bottom: 0
+    & a
+      line-height: 1.8
+      color: $color_primary
+      transition: $transition
+    & li:not(.btn-menu)
+      display: flex
+      align-items: center
+      gap: 8px
+      position: relative
+      &:hover
+        & a
+          color: $color_primary_light
+        &::before
+          background: $color_primary_light
+      &::before
+        content: ''
+        display: block
+        width: 6px
+        min-width: 6px
+        height: 6px
+        border-radius: 50%
+        background: $color_primary
+        transition: $transition
+  &__item
+    display: flex
+    align-items: center
+    gap: 5px
+    margin-bottom: 15px
+    &:hover
+      color: $color_primary_dark
+  &__icon
+    &-1
+      min-width: 20px
+      width: 20px
+    &-2
+      min-width: 22px
+      width: 22px
+  &__map
+    margin-top: 25px
+    @media (max-width: 767px)
+      display: none
+
+.footer-socials
+  gap: 10px
+  & .socials
+    &__link
+      width: 30px
+      height: 30px
+      +center
+      border-radius: 2px
+      background: $color_primary
+      transition: $transition
+      &:hover
+        background: $color_primary_light
+    &__icon
+      width: 20px
+
+.copyright
+  padding: 10px 0
+  text-align: center
+  &__text
+    color: $color_title_1
+  &__link
+    font-size: 14px
+    font-weight: 400
+    color: $color_primary
+    transition: $transition
+    &:hover
+      color: $color_primary_dark
