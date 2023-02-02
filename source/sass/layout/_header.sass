@@ -31,16 +31,21 @@
   &-logo
     &__link
       width: auto
+      @media (max-width: 767px)
+        max-width: 200px
+  &-container
+    @media (max-width: 767px)
+      padding: 0 5px 0 15px
   &__row
     +center
     @media (max-width: 1170px)
       +space-center
     &-1
       visibility: visible
-      padding: 30px 0
+      padding: 15px 0
       transition: $transition
       @media (max-width: 1170px)
-        padding: 15px 0
+        padding: 10px 0
     &-2
       @media (max-width: 1170px)
         display: none
@@ -51,8 +56,6 @@
         top: 0
         bottom: 0
         background: #fff
-        width: -webkit-max-content
-        width: -moz-max-content
         width: max-content
         padding: 60px 40px 22px calc((100% - 740px) / 2 + 15px)
       &.hd
@@ -73,17 +76,26 @@
     @media (max-width: 767px)
       +center
       flex-direction: column
-      gap: 8px
+      gap: 12px
   &__separator
     padding: 0 5px
   &__socials
     gap: 20px
+    @media (max-width: 767px)
+      margin: 0 0 0 auto
     & .socials__link
       width: 25px
       height: auto
       object-fit: cover
       @media (max-width: 767px)
-        width: 17px
+        width: 15px
+  &__link
+    white-space: nowrap
+  &__left
+    @media (max-width: 767px)
+      display: flex
+      flex-wrap: wrap
+      font-size: 14px
 
 .menu-item-has-children
   & > a
@@ -131,7 +143,7 @@
     width: 30px
     height: 2px
     margin: auto
-    background: #333
+    background: $color_primary_dark
     cursor: pointer
     &::after, &::before
       content: ''
@@ -139,7 +151,7 @@
       display: block
       width: 30px
       height: 2px
-      background: #333
+      background: $color_primary_dark
     &::before
       top: 15px
     &::after

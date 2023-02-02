@@ -48,11 +48,10 @@ body
   &.title-h2
     font-size: 26px
     color: $color_primary_dark
+    max-width: 720px
+    margin-bottom: 30px
     @media (max-width: 767px)
-      text-align: center
-      font-size: 25px
-      line-height: 1.3
-      letter-spacing: 0.06em
+      font-size: 24px
   &.title-h3
     font-size: 35px
     letter-spacing: 0.06em
@@ -62,10 +61,20 @@ body
       font-size: 25px
       line-height: 1.3
 
+.text-center
+  text-align: center
+  margin: 0 auto
+
 .section
   padding: 50px 0
   &.form
     padding-bottom: 80px
+  &-first
+    margin-top: 177.5px
+    @media (max-width: 1170px)
+      margin-top: 79.5px
+    @media (max-width: 767px)
+      margin-top: 70px
 
 .socials
   display: flex
@@ -149,15 +158,12 @@ body
 select
   display: none
 
-input
-  &:focus-visible
-    border-bottom: none!important
-
 input, textarea
   padding: 7px 10px
   color: #333
   font-size: 13px
   &:focus-visible
+    border: none!important
     outline: 2px solid $color_primary_dark!important
 
 textarea

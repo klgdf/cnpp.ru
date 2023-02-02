@@ -14,6 +14,7 @@
 //Layout
 @import "layout/header";
 @import "layout/form";
+@import "layout/donate";
 @import "layout/footer";
 
 //Components
@@ -22,6 +23,7 @@
 
 //Pages
 @import "pages/main";
+@import "pages/price";
 
 //Vendors
 @import "vendors/swiper.min";

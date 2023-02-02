@@ -1,12 +1,23 @@
-.btn-menu a, .btn
+.btn-menu a, .btn, .btn-donate
   display: block
   width: max-content
   font-size: 14px
   line-height: 17px
-  background: $color_primary
-  color: $color_btn
   padding: 13px 24px
   cursor: pointer
   transition: $transition
+
+.btn-menu a, .btn
+  background: $color_primary
+  color: $color_btn
   &:hover
     background: $color_primary_light
+
+.btn-donate
+  white-space: nowrap
+  border: 1px solid $color_primary_dark
+  color: $color_primary_dark
+  &:hover
+    background: $color_primary_light
+    color: $color_btn
+    border-color: $color_primary_light
