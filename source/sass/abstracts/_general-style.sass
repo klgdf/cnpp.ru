@@ -233,3 +233,26 @@ textarea
         background: $color_primary_light
     &__icon
       width: 20px
+
+//first screen template
+.first-template
+  +center
+  +bg
+  height: calc(100vh - 176.5px)
+  @media (max-width: 991px)
+    height: calc(100vh - 135.2px)
+  &__block
+    max-width: 570px
+    margin: 0 auto
+  &__title, &__subtitle
+    text-align: center
+    color: #fff!important
+  &__title
+    & span
+      text-transform: uppercase
+      color: $color_primary_bright
+  &__subtitle
+    margin-bottom: 50px!important
+  &__btn
+    font-size: 20px!important
+    margin: 0 auto
