@@ -34,30 +34,16 @@
   &-btn
     margin-top: 20px
   &-menu
-    margin-bottom: 0
     & a
       line-height: 1.8
       color: $color_primary
       transition: $transition
     & li:not(.btn-menu)
-      display: flex
-      align-items: center
-      gap: 8px
-      position: relative
       &:hover
         & a
           color: $color_primary_light
         &::before
           background: $color_primary_light
-      &::before
-        content: ''
-        display: block
-        width: 6px
-        min-width: 6px
-        height: 6px
-        border-radius: 50%
-        background: $color_primary
-        transition: $transition
   &__item
     display: flex
     align-items: center
@@ -77,7 +63,7 @@
     @media (max-width: 767px)
       display: none
 
-.footer-socials
+.footer-socials, .disorder__socials
   gap: 10px
   & .socials
     &__link

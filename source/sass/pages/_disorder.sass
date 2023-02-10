@@ -1,0 +1,73 @@
+.disorder
+  &__row
+    display: flex
+    gap: 40px
+    @media (max-width: 767px)
+      flex-direction: column
+      gap: 20px
+  &__left
+    flex: 0 1 20%
+    @media (max-width: 767px)
+      order: 2
+  &__card
+    @media (max-width: 767px)
+      max-width: 320px
+      font-size: 14px
+      padding: 10px
+      border: 1px solid $border_color
+  &__note
+    flex: 0 1 80%
+    padding: 20px 30px
+    border: 1px solid $border_color
+    @media (max-width: 767px)
+      order: 1
+    & iframe
+      margin: 30px 0
+    & p
+      margin-bottom: 20px
+      margin-top: 0
+      &:last-child
+        margin-bottom: 0
+  &__item, &__spec
+    margin-bottom: 20px
+    @media (max-width: 767px)
+      margin-bottom: 10px
+    &:last-child
+      margin-bottom: 0
+    & span
+      display: block
+      +manrope
+      font-weight: 700
+      color: $color_primary_dark
+  &__author
+    color: #000
+    margin-bottom: 10px
+  &__img
+    margin-bottom: 20px
+    @media (max-width: 767px)
+      width: 240px
+      height: auto
+  &__name, &__specialization
+    +manrope
+    font-weight: 700
+    color: #000
+  &__specialization
+    margin-bottom: 30px
+    @media (max-width: 767px)
+      margin-bottom: 20px
+  &__spec
+    & span
+      margin-bottom: 10px
+      &:last-child
+        margin-bottom: 0
+  &__name
+    font-size: 20px
+    margin-bottom: 5px
+  &__share
+    margin-top: 70px
+    @media (max-width: 767px)
+      margin-top: 3`0px
+    &-title
+      color: #000
+      margin-bottom: 10px
+
