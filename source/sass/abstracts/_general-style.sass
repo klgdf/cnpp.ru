@@ -47,7 +47,9 @@ body
   line-height: 1.3
   &.title-h1
     font-size: 60px
-    line-height: 70px
+    line-height: 1.17
+    @media (max-width: 767px)
+      font-size: 38px
     & span
       text-transform: uppercase
   &.title-h2

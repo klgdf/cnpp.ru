@@ -1,0 +1,104 @@
+.about-1
+  +center
+  +bg
+  background-image: url(https://cnpp.ru/wp-content/uploads/2019/03/-%D1%86%D0%B5%D0%BD%D1%82%D1%80%D0%B5-e1553274224907.jpg)
+  height: calc(100vh - 176.5px)
+  @media (max-width: 991px)
+    height: calc(100vh - 135.2px)
+  &__block
+    max-width: 570px
+    margin: 0 auto
+  &__title, &__subtitle
+    text-align: center
+    color: #fff!important
+  &__title
+    & span
+      color: $color_primary_bright
+  &__subtitle
+    margin-bottom: 50px!important
+  &__btn
+    font-size: 20px
+    margin: 0 auto
+
+
+.about-2
+  &__row
+    display: flex
+    @media (max-width: 991px)
+      flex-direction: column
+    &:first-child
+      & .about-2__col-1
+        @media (max-width: 991px)
+          padding-top: 0!important
+    &:nth-child(2n+1)
+      & .about-2__col-1
+        padding: 0 40px 30px 0
+    &:nth-child(2n)
+      & .about-2__col-1
+        order: 2
+        padding: 30px 0 0 40px
+        @media (max-width: 991px)
+          order: 1
+      & .about-2__col-2
+        order: 1
+        @media (max-width: 991px)
+          order: 2
+  &__col
+    flex: 0 1 50%
+    &-1
+      @media (max-width: 991px)
+        padding: 30px 0!important
+    &-2
+      @media (max-width: 991px)
+        margin: 0 -20px
+        & img
+          width: 100%
+          height: auto
+          object-fit: cover
+        & 
+  &__title
+    color: $color_primary_dark
+    margin-bottom: 20px
+  &__text
+    & p
+      margin: 0
+    & > div
+      margin-bottom: 20px
+      &:last-child
+        margin-bottom: 0
+
+.infographics
+  display: flex
+  color: #fff
+  @media (max-width: 991px)
+    flex-direction: column
+  &__item
+    flex: 0 1 25%
+    +center
+    flex-direction: column
+    text-align: center
+    cursor: default
+    padding: 40px 22px
+    transition: transform .35s
+    &_1
+      background: #97bbc5
+    &_2
+      background: #83abb6
+    &_3
+      background: #7fa4ae
+    &_4
+      background: #7597a7
+  & .counter
+    font-size: 50px
+    line-height: 1
+  &__number
+    display: flex
+    align-items: flex-end
+    gap: 8px
+    margin-bottom: 10px
+    & span
+      margin-bottom: 5px
+  &__title
+    font-size: 22px
+    max-width: 230px
+
