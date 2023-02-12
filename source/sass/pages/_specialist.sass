@@ -1,0 +1,15 @@
+.specialist
+  max-width: 1280px
+  &__row
+    display: flex
+    gap: 40px
+    margin-bottom: 30px
+  &__col
+    flex: 0 1 50%
+    @media (max-width: 767px)
+      flex: 0 1 100%
+    &:last-child
+      @media (max-width: 767px)
+        display: none
+      & .specialist__img
+        margin: 0 0 0 auto
