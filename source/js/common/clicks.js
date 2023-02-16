@@ -35,34 +35,34 @@ function documentClicks() {
     //   }
     // }
 
-    if (document.querySelector('#menu')) {
-      element = ClickSelector(target, 'e_menu');
-      if (element) {
-        modalToggle('menu');
-        element.classList.toggle('active');
-      }
-      element = ClickSelector(target, 'e_menu_close');
-      if (element) {
-        modalClose('menu');
-        document.querySelector('.header__menu').classList.remove('active');
-      }
-      element = ClickSelector(target, 'menu-nav');
-      if (element) {
-        modalClose('menu');
-        document.querySelector('.header__menu').classList.remove('active');
-      }
-    }
+    // if (document.querySelector('#menu')) {
+    //   element = ClickSelector(target, 'e_menu');
+    //   if (element) {
+    //     modalToggle('menu');
+    //     element.classList.toggle('active');
+    //   }
+    //   element = ClickSelector(target, 'e_menu_close');
+    //   if (element) {
+    //     modalClose('menu');
+    //     document.querySelector('.header__menu').classList.remove('active');
+    //   }
+    //   element = ClickSelector(target, 'menu-nav');
+    //   if (element) {
+    //     modalClose('menu');
+    //     document.querySelector('.header__menu').classList.remove('active');
+    //   }
+    // }
 
 
-    if (document.querySelector('#pet')) {
-      element = ClickSelector(target, 'e_pet');
-      if (element) {
-        modalOpen('pet');
-      }
-      element = ClickSelector(target, 'e_pet_close');
-      if (element) {
-        modalClose('pet');
-      }
-    }
+    // if (document.querySelector('#pet')) {
+    //   element = ClickSelector(target, 'e_pet');
+    //   if (element) {
+    //     modalOpen('pet');
+    //   }
+    //   element = ClickSelector(target, 'e_pet_close');
+    //   if (element) {
+    //     modalClose('pet');
+    //   }
+    // }
   });
 }

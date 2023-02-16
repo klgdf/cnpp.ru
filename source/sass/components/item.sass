@@ -1,14 +1,66 @@
 .item
   display: flex
   border-radius: 2px
+  background: $color_card
+  @media (max-width: 991px)
+    flex-direction: column
+  @media (max-width: 680px)
+    flex-direction: row
+  @media (max-width: 539px)
+    flex-direction: column
   &__info
-    padding: 30px 30px 30px 50px
+    padding: 15px 15px 15px 20px
+  &__title, &__subtitle
+    color: $color_primary
+    font-size: 19px
+    line-height: 1.2
   &__title
-    color: $color_primary_light
-    font-size: 18px
-    font-weight: 500
+    text-transform: uppercase
+    margin-bottom: 8px
+  &__subtitle
     margin-bottom: 15px
+  &__text
+    font-size: 14px
+    & > div
+      margin-bottom: 15px
+      &:last-child
+        margin-bottom: 0
+    & .title-note
+      font-size: 14px
+      color: $color_primary_dark
+      margin-bottom: 5px
+    & .list__item
+      line-height: 1.4
+      margin-bottom: 5px
+      &::before
+        width: 5px
+        height: 5px
+        min-width: 5px
   &__img
-    max-width: 300px
+    display: block
+    max-width: 275px
+    width: 100%
     height: auto
     object-fit: cover
+    @media (max-width: 991px)
+      margin: 0 auto
+    @media (max-width: 680px)
+      max-width: 220px
+      margin: 0
+    @media (max-width: 539px)
+      margin: 0 auto
+  &__btn
+    @media (max-width: 991px)
+      margin: 0 auto
+    @media (max-width: 680px)
+      margin: 0
+    @media (max-width: 539px)
+      margin: 0 auto
+
+.items-grid
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  gap: 35px
+  @media (max-width: 680px)
+    grid-template-columns: repeat(1, 1fr)
+    gap: 25px

@@ -5,23 +5,23 @@
   box-shadow: rgb(0 0 0 / 12%) 0 1px 3px
   background: #fff
   z-index: 5
+  padding: 15px 0
   transition: $transition
+  @media (max-width: 767px)
+    padding: 10px 0
   &.fixed
     top: 0
-    & .header-logo
-      @media (min-width: 1169px)
-        display: none
-    & .header__row-1
-      @media (min-width: 1169px)
-        height: 0
-        visibility: hidden
-        padding: 0
     & ~ .section-first
       margin-top: 0
   & .menu
     +center
-    gap: 45px
+    gap: 40px
     margin-bottom: 0
+    @media (max-width: 1350px)
+      gap: 30px
+      font-size: 14px
+    @media (max-width: 1250px)
+      gap: 25px
     &-item
       position: relative
       & > a
@@ -31,41 +31,29 @@
         visibility: visible
         opacity: 1
   &-logo
+    display: block
+    max-width: 270px
+    @media (max-width: 767px)
+      max-width: 200px
     &__link
-      width: auto
-      @media (max-width: 767px)
-        max-width: 200px
+      width: 100%
   &-container
+    display: flex
+    justify-content: space-between
+    align-items: center
     @media (max-width: 767px)
       padding: 0 5px 0 15px
-  &__row
-    +center
+  &__right
+    display: flex
+    align-items: center
+    gap: 20px
+  &__right, &__center
     @media (max-width: 1170px)
-      +space-center
-    &-1
-      visibility: visible
-      padding: 15px 0
-      transition: $transition
-      @media (max-width: 1170px)
-        padding: 10px 0
-    &-2
-      @media (max-width: 1170px)
-        display: none
-      @media (max-width: 991px)
-        display: block
-        position: fixed
-        left: 0
-        top: 0
-        bottom: 0
-        background: #fff
-        width: max-content
-        padding: 60px 40px 22px calc((100% - 740px) / 2 + 15px)
-      &.hd
-        @media (max-width: 992px)
-          z-index: -1
-          visibility: hidden
-          display: inherit
-          opacity: 0
+      display: none
+  &__btn
+    font-size: 16px!important
+    @media (max-width: 1350px)
+      font-size: 14px!important
 
 .info
   padding: 10px 0
@@ -97,7 +85,7 @@
     @media (max-width: 767px)
       display: flex
       flex-wrap: wrap
-      font-size: 14px
+      font-size: $size_text_mob
 
 .menu-item-has-children
   & > a
@@ -158,3 +146,10 @@
       top: 15px
     &::after
       bottom: 15px
+
+.menu-icon
+  display: block
+  width: 25px
+  height: 25px
+  +bg
+  background-image: url(../img/profile.svg)

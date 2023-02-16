@@ -8,6 +8,7 @@
 
 *::-webkit-scrollbar
   width: 8px
+  height: 6px
 
 *::-webkit-scrollbar-track
   box-shadow: inset 0 0 14px 14px #fff
@@ -33,6 +34,8 @@ body
   line-height: $lh_text
   color: $color_text_1
   background: #fff
+  @media (max-width: 767px)
+    font-size: $size_text_mob
 
 .container
   max-width: 1860px
@@ -42,12 +45,11 @@ body
     padding: 0 15px
 
 .title
-  font-weight: 400
   font-style: normal
   line-height: 1.3
   &.title-h1
     font-size: 60px
-    line-height: 1.17
+    line-height: 1.18
     @media (max-width: 767px)
       font-size: 38px
     & span
@@ -59,6 +61,7 @@ body
     margin-bottom: 30px
     @media (max-width: 767px)
       font-size: 24px
+      margin-bottom: 20px
   &.title-h3
     font-size: 35px
     letter-spacing: 0.06em
@@ -74,10 +77,14 @@ body
 
 .section
   padding: 50px 0
+  @media (max-width: 767px)
+    padding: 40px 0
   &.form
     padding-bottom: 80px
+    @media (max-width: 767px)
+      padding-bottom: 60px
   &-first
-    margin-top: 132.5px
+    margin-top: 84.42px
     transition: $transition
     @media (max-width: 1170px)
       margin-top: 79.5px
@@ -93,8 +100,10 @@ body
 
 .select
   position: relative
-  height: 30px
+  height: 34.5px
   border: 1px solid $color_primary
+  @media (max-width: 767px)
+    height: 26.5px
   &--active
     z-index: 1
     & .select__toggle::after
@@ -103,7 +112,7 @@ body
       visibility: visible
   &_fillet
     & .select__toggle
-      color: #333
+      color: $color_primary
   &::after
     content: ''
     position: absolute
@@ -119,9 +128,8 @@ body
     position: relative
     height: 100%
     width: 100%
-    font-size: 13px
-    color: #aaa9a9
-    padding: 0 15px
+    color: $color_text_1
+    padding: 0 38px 0 8px
     border: none
     outline: 0
     cursor: pointer
@@ -137,6 +145,8 @@ body
       background-repeat: no-repeat
       background-image: url(../img/arrow.svg)
       transition: $transition
+      @media (max-width: 767px)
+        top: 8.5px
   &__options
     position: absolute
     width: calc(100% + 2px)
@@ -146,20 +156,21 @@ body
     flex-direction: column
     background: #fff
     border: 1px solid $color_primary
-    padding-bottom: 8px
     visibility: hidden
     max-height: 248px
     overflow: auto
   &__option
-    font-size: 13px
-    color: #aaa9a9
-    padding: 10px 15px
+    color: $color_text_1
+    padding: 7px 8px
     width: 100%
     background: #fff
     outline: 0
     text-align: left
     border: none
     cursor: pointer
+    white-space: nowrap
+    text-overflow: ellipsis
+    overflow: hidden
     &:first-child
       display: none
 
@@ -168,11 +179,12 @@ select
 
 input, textarea
   padding: 7px 10px
-  color: #333
-  font-size: 13px
+  color: $color_primary
+  @media (max-width: 767px)
+    padding: 4px 6px
   &:focus-visible
-    border: none!important
-    outline: 2px solid $color_primary_dark!important
+    border: 1px solid $color_primary_dark!important
+    outline: none!important
 
 textarea
   overflow: auto
@@ -184,39 +196,42 @@ textarea
   background: $color_primary_dark
   margin: 20px 0
 
-
 //for note (disorders)
 .list
   margin-bottom: 0
   &__item
     position: relative
     display: flex
-    align-items: center
     gap: 8px
-    line-height: 1.8
+    line-height: 1.6
+    margin-bottom: 7px
     &::before
       content: ''
       display: block
-      width: 6px
-      min-width: 6px
-      height: 6px
+      width: 8px
+      min-width: 8px
+      height: 8px
+      margin-top: 9px
       border-radius: 50%
       background: $color_primary
       transition: $transition
+    &:last-child
+      margin-bottom: 0
 
 .attention
   padding: 10px 0 10px 20px
   margin: 30px 0
   color: $color_primary
   border-left: 3px solid $color_primary
+  @media (max-width: 767px)
+    padding: 5px 0 5px 10px
 
 .title-note
   +manrope
   font-size: 20px
   font-weight: 500
   color: $color_primary
-  margin-bottom: 5px
-
+  margin-bottom: 10px
 
 //socials in footer and share btn
 .footer-socials, .disorder__socials
@@ -244,6 +259,8 @@ textarea
   &__block
     max-width: 570px
     margin: 0 auto
+    @media (max-width: 767px)
+      padding: 0 20px
   &__title, &__subtitle
     text-align: center
     color: #fff!important
@@ -252,10 +269,13 @@ textarea
       text-transform: uppercase
       color: $color_primary_bright
   &__subtitle
+    max-width: 720px
     margin-bottom: 50px!important
   &__btn
     font-size: 20px!important
     margin: 0 auto
+    @media (max-width: 767px)
+      font-size: 16px!important
 
 .note
   & iframe
@@ -270,3 +290,79 @@ textarea
   display: none
   @media (max-width: 767px)
     display: block
+
+.remark
+  +manrope
+  font-size: 14px
+  line-height: 1.2
+  margin-top: 10px
+
+.text-link
+  +manrope
+  font-weight: 500
+  color: $color_primary_bright
+
+//spoiler
+details
+  display: block
+  border: 1px solid $border_color
+  padding: 10px 15px
+  margin-bottom: 5px
+  &:last-child
+    margin-bottom: 0
+  &[open] .summary__icon
+    &::after
+      margin-left: 6px
+      background: #fff
+    &::before
+      visibility: hidden
+      width: 0
+      height: 0
+
+summary
+  list-style: none
+  display: flex
+  cursor: pointer
+  &::-webkit-details-marker
+    display: none
+
+.summary
+  display: flex
+  cursor: pointer
+  &__icon
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 22px
+    height: 22px
+    background: $color_primary
+    margin-right: 12px
+  &__icon::before, &__icon::after
+    content: ""
+    display: block
+    background: #fff
+    width: 12px
+    height: 2px
+    transition: $transition
+  &__icon::after
+    margin-left: -6px
+  &__icon::before
+    margin-right: -6px
+    transform: rotate(90deg)
+  &-inner
+    padding: 16px 0 0 34px
+    transition: $transition
+  &__text
+    +manrope
+    font-weight: 500
+    color: $color_primary
+
+.btn-list
+  margin: 8px 0 15px
+  &:last-child
+    margin-bottom: 0
+
+.anchor
+  position: absolute
+  top: -84.42px
+

@@ -4,6 +4,7 @@
   font-size: 14px
   line-height: 1.22
   padding: 13px 24px
+  border-radius: 2px
   cursor: pointer
   transition: $transition
 
@@ -21,3 +22,37 @@
     background: $color_primary_light
     color: $color_btn
     border-color: $color_primary_light
+
+.white-btn, .main-btn
+  display: inline-block
+  border-radius: 2px
+  font-size: 24px
+  line-height: 1.17
+  cursor: pointer
+  transition: $transition
+  @media (max-width: 1170px)
+    font-size: 20px
+  @media ((max-width: 1100px) and (min-width: 1024px))
+    font-size: 18px
+  @media (max-width: 539px)
+    font-size: 16px
+
+.white-btn
+  background: #fff
+  color: #253D46
+  padding: 16px 43px
+  @media (max-width: 539px)
+    padding: 12px 22px
+
+.main-btn
+  text-decoration: underline
+  padding: 20px 38px
+  max-width: 270px
+  width: max-content
+  @media (max-width: 991px)
+    padding: 15px 30px
+  @media (max-width: 539px)
+    padding: 12px 22px
+  &:hover
+    background: $bg_translucent
+    text-decoration: underline!important

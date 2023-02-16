@@ -51,6 +51,32 @@ document.addEventListener('DOMContentLoaded', function () {
     documentClicks();
     footer();
     currentYear();
+
+    if (document.querySelector(".main-4__slider")) {
+      new Swiper(".main-4__slider", {
+        breakpoints: {
+          320: {
+            slidesPerView: 1
+          },
+          680: {
+            slidesPerView: 2,
+            spaceBetween: 10
+          },
+          991: {
+            slidesPerView: 3,
+            spaceBetween: 10
+          },
+          1280: {
+            slidesPerView: 4,
+            spaceBetween: 20
+          }
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        }
+      })
+    }
   }());
 });
 

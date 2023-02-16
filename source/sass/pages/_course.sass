@@ -1,0 +1,109 @@
+.course
+  position: relative
+  padding-top: 50px
+  padding-bottom: 50px
+  @media (max-width: 767px)
+    padding-top: 25px
+    padding-bottom: 25px
+  &:nth-child(2n)
+    & .course__col-1
+      order: 2
+      justify-content: flex-end
+      text-align: right
+      @media (max-width: 767px)
+        order: 1
+        text-align: left
+        justify-content: flex-start
+    & .course__col-2
+      order: 1
+      @media (max-width: 767px)
+        order: 2
+  &__row
+    display: flex
+    gap: 30px
+    @media (max-width: 767px)
+      flex-direction: column
+      gap: 15px
+  &__col
+    &-1
+      flex: 0 1 35%
+      display: flex
+      align-items: center
+    &-2
+      flex: 0 1 65%
+
+.course-1
+  +bg
+  background-image: url(../img/bg-skills.png)
+  background-position: center
+
+.course-2
+  position: relative
+  padding: 30px 0
+  @media (max-width: 1860px)
+    margin: 0 -30px 0 0
+  @media (max-width: 767px)
+    margin: 0 -15px 0 0
+    padding: 15px 0
+  &::before
+    content: ""
+    z-index: 1
+    position: absolute
+    right: 0
+    top: 0
+    width: 50px
+    height: 100%
+    background: linear-gradient(270deg,#fff,rgba(255,255,255,0))
+    pointer-events: none
+  &__row
+    display: flex
+    flex-wrap: nowrap
+    align-items: center
+    overflow-x: auto
+    overflow-y: hidden
+    padding-bottom: 5px
+    gap: 40px
+    @media (max-width: 1860px)
+      padding-right: 30px
+    @media (max-width: 767px)
+      gap: 35px
+      padding-right: 15px
+  &__link
+    +manrope
+    color: $color_primary
+    font-size: 20px
+    font-weight: 500
+    white-space: nowrap
+    @media (max-width: 767px)
+      font-size: 18px
+
+.course-3
+  +bg
+  background-image: url(../img/bg-leading.png)
+  background-position: center
+  &__title
+    color: #fff!important
+  
+.course-4
+  position: relative
+  +center
+  text-align: center
+  padding-bottom: 80px
+  @media (max-width: 767px)
+    padding-top: 50px
+    padding-bottom: 60px
+  &__block
+    max-width: 520px
+    margin: 0 auto
+  &__btn
+    margin: 0 auto
+  &__text
+    margin-bottom: 30px
+    & p
+      margin-bottom: 10px
+      &:last-child
+        margin-bottom: 0
+  &__title
+    color: $color_primary_bright!important
+    margin-bottom: 20px
+

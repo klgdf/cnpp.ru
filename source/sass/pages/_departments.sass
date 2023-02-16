@@ -1,2 +1,62 @@
 .departments-1
   background-image: url(https://cnpp.ru/wp-content/uploads/2016/01/header-image-departments.jpg)
+
+.departments
+  padding-top: 100px
+  +bg
+  background-image: url(../img/departments.png)
+  color: #fff
+  @media (max-width: 767px)
+    padding-top: 40px!important
+  &__grid
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    margin-bottom: -125px
+    @media (max-width: 767px)
+      grid-template-columns: repeat(1, 1fr)
+      margin: 0 -15px
+  &__item
+    padding: 40px 32px
+    text-align: center
+    @media (max-width: 767px)
+      padding: 30px 15px
+    &:first-child
+      background: #4A707A
+    &:nth-child(2)
+      background: $color_primary_light
+  &__icon
+    margin: 20px auto 30px
+    @media (max-width: 767px)
+      margin: 20px auto
+      max-width: 50px
+  &__btn
+    background: $color_btn
+    color: $color_primary
+    margin: 0 auto
+    transition: $transition
+    &:hover
+      background: $bg_translucent
+      color: #fff
+  &__text
+    margin-bottom: 40px
+    @media (max-width: 767px)
+      margin-bottom: 25px
+  &__left
+    & p
+      margin-bottom: 10px
+      &:last-child
+        margin-bottom: 0
+  &__right
+    & img
+      margin: 0 0 0 auto
+      @media (max-width: 767px)
+        display: none
+  &__title
+    color: #fff!important
+    @media (max-width: 767px)
+      margin-bottom: 20px!important
+  &__subtitle
+    font-size: 24px
+    line-height: 1.17
+    @media (max-width: 767px)
+      font-size: 22px

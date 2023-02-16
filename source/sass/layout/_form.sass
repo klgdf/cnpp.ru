@@ -8,20 +8,30 @@
     @media (max-width: 991px)
       grid-template-columns: repeat(1, 1fr)
       gap: 30px
+    @media (max-width: 767px)
+      gap: 20px
+      margin-bottom: 20px
   &__description
     margin-bottom: 50px
+    @media (max-width: 767px)
+      margin-bottom: 40px
   &__item
     & input
       border-bottom: 1px solid $color_primary
+      border-top: 1px solid transparent
       width: 100%
     & label
-      margin-bottom: 3px
+      margin-bottom: 5px
     & p
       margin-bottom: 0
   &__submit
     margin: 0 auto
   &-container
     max-width: 1280px
+  & .attention
+    margin-bottom: 0
+    @media (max-width: 767px)
+      font-size: $size_text_mob
 
 textarea
   width: 100%
