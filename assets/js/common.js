@@ -36,35 +36,35 @@ function documentClicks() {
     //   }
     // }
 
-    if (document.querySelector('#menu')) {
-      element = ClickSelector(target, 'e_menu');
-      if (element) {
-        modalToggle('menu');
-        element.classList.toggle('active');
-      }
-      element = ClickSelector(target, 'e_menu_close');
-      if (element) {
-        modalClose('menu');
-        document.querySelector('.header__menu').classList.remove('active');
-      }
-      element = ClickSelector(target, 'menu-nav');
-      if (element) {
-        modalClose('menu');
-        document.querySelector('.header__menu').classList.remove('active');
-      }
-    }
+    // if (document.querySelector('#menu')) {
+    //   element = ClickSelector(target, 'e_menu');
+    //   if (element) {
+    //     modalToggle('menu');
+    //     element.classList.toggle('active');
+    //   }
+    //   element = ClickSelector(target, 'e_menu_close');
+    //   if (element) {
+    //     modalClose('menu');
+    //     document.querySelector('.header__menu').classList.remove('active');
+    //   }
+    //   element = ClickSelector(target, 'menu-nav');
+    //   if (element) {
+    //     modalClose('menu');
+    //     document.querySelector('.header__menu').classList.remove('active');
+    //   }
+    // }
 
 
-    if (document.querySelector('#pet')) {
-      element = ClickSelector(target, 'e_pet');
-      if (element) {
-        modalOpen('pet');
-      }
-      element = ClickSelector(target, 'e_pet_close');
-      if (element) {
-        modalClose('pet');
-      }
-    }
+    // if (document.querySelector('#pet')) {
+    //   element = ClickSelector(target, 'e_pet');
+    //   if (element) {
+    //     modalOpen('pet');
+    //   }
+    //   element = ClickSelector(target, 'e_pet_close');
+    //   if (element) {
+    //     modalClose('pet');
+    //   }
+    // }
   });
 }
 
@@ -119,6 +119,32 @@ document.addEventListener('DOMContentLoaded', function () {
     documentClicks();
     footer();
     currentYear();
+
+    if (document.querySelector(".main-4__slider")) {
+      new Swiper(".main-4__slider", {
+        breakpoints: {
+          320: {
+            slidesPerView: 1
+          },
+          680: {
+            slidesPerView: 2,
+            spaceBetween: 10
+          },
+          991: {
+            slidesPerView: 3,
+            spaceBetween: 10
+          },
+          1280: {
+            slidesPerView: 4,
+            spaceBetween: 20
+          }
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        }
+      })
+    }
   }());
 });
 
