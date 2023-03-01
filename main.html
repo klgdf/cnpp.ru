@@ -22,12 +22,32 @@
   <header class="header">
     <div class="header-container container">
       <div class="header__left"><a class="header-logo" href=""><img class="header-logo__link" src="./assets/img/logo.svg" alt="Центр научно-практической психологии Dialectica" data-retina_logo_url="./assets/img/logo.svg"/></a></div>
-      <div class="header__center">
+      <div class="header__center" id="nav">
         <nav class="header-menu">
           <ul class="menu">
             <li class="menu-item menu__item"><a href="">О центре</a></li>
             <li class="menu-item menu__item"><a href="">Специалисты</a></li>
-            <li class="menu-item menu__item"><a href="">Расстройства</a></li>
+            <li class="menu-item menu__item menu-item-has-children mega-menu"><a href="">Расстройства</a>
+              <ul class="sub-menu">
+                <li class="menu-item menu-item-has-children"><a href="">Тревожные расстройства</a>
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="">Паническое расстройство</a></li>
+                  </ul>
+                </li>
+                <li class="menu-item menu-item-has-children"><a href="">Расстройство настроения</a>
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="">Депрессия </a></li>
+                  </ul>
+                </li>
+                <li class="menu-item menu-item-has-children"><a href="">Расстройства пищевого поведения</a>
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="">Булимия</a></li>
+                  </ul>
+                </li>
+                <li class="menu-item"><a href="">Осложненное посттравматическое стрессовое расстройство (кПТСР)</a></li>
+                <li class="menu-item"><a href="">Пограничное расстройство личности (ПРЛ)</a></li>
+              </ul>
+            </li>
             <li class="menu-item menu__item menu-item-has-children"><a href="">Клиенту</a>
               <ul class="sub-menu">
                 <li class="menu-item"><a href="">Правила получения услуг</a></li>
@@ -42,7 +62,7 @@
         </nav>
       </div>
       <div class="header__right"><a class="btn header__btn" href="">Запись на прием</a><a class="menu-icon" href=""></a></div>
-      <div class="header__menu e_menu">
+      <div class="header__menu e_toggle">
         <div></div>
       </div>
     </div>
@@ -212,39 +232,41 @@
   <section class="section">
     <div class="container main-4">
       <h2 class="title title-h2 main-4__title">Новости</h2>
-      <div class="swiper-container main-4__slider">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide main-4__item"><img class="main-4__img" src="https://i0.wp.com/cnpp.ru/wp-content/uploads/2019/04/%D0%A4%D0%BE%D0%BD-dbt.jpg?resize=540%2C272&amp;ssl=1" alt=""/>
-            <h4 class="main-4__subtitle">Когнитивно — поведенческая терапия расстройств пищевого поведения</h4>
-            <div class="main-4__text">hghjgjgjfjjfhghghhghghhghghhghgh</div><a class="btn main-4__btn" href="">читать</a>
-          </div>
-          <div class="swiper-slide main-4__item"><img class="main-4__img" src="https://i0.wp.com/cnpp.ru/wp-content/uploads/2019/04/%D0%A4%D0%BE%D0%BD-dbt.jpg?resize=540%2C272&amp;ssl=1" alt=""/>
-            <h4 class="main-4__subtitle">Когнитивно — поведенческая терапия расстройств пищевого поведения</h4>
-            <div class="main-4__text">hghjgjgjfjjfhghghhghghhghghhghgh</div><a class="btn main-4__btn" href="">читать</a>
-          </div>
-          <div class="swiper-slide main-4__item"><img class="main-4__img" src="https://i0.wp.com/cnpp.ru/wp-content/uploads/2019/04/%D0%A4%D0%BE%D0%BD-dbt.jpg?resize=540%2C272&amp;ssl=1" alt=""/>
-            <h4 class="main-4__subtitle">Когнитивно — поведенческая терапия расстройств пищевого поведения</h4>
-            <div class="main-4__text">hghjgjgjfjjfhghghhghghhghghhghgh</div><a class="btn main-4__btn" href="">читать</a>
-          </div>
-          <div class="swiper-slide main-4__item"><img class="main-4__img" src="https://i0.wp.com/cnpp.ru/wp-content/uploads/2019/04/%D0%A4%D0%BE%D0%BD-dbt.jpg?resize=540%2C272&amp;ssl=1" alt=""/>
-            <h4 class="main-4__subtitle">Когнитивно — поведенческая терапия расстройств пищевого поведения</h4>
-            <div class="main-4__text">hghjgjgjfjjfhghghhghghhghghhghgh</div><a class="btn main-4__btn" href="">читать</a>
-          </div>
-          <div class="swiper-slide main-4__item"><img class="main-4__img" src="https://i0.wp.com/cnpp.ru/wp-content/uploads/2019/04/%D0%A4%D0%BE%D0%BD-dbt.jpg?resize=540%2C272&amp;ssl=1" alt=""/>
-            <h4 class="main-4__subtitle">Когнитивно — поведенческая терапия расстройств пищевого поведения</h4>
-            <div class="main-4__text">hghjgjgjfjjfhghghhghghhghghhghgh</div><a class="btn main-4__btn" href="">читать</a>
-          </div>
-          <div class="swiper-slide main-4__item"><img class="main-4__img" src="https://i0.wp.com/cnpp.ru/wp-content/uploads/2019/04/%D0%A4%D0%BE%D0%BD-dbt.jpg?resize=540%2C272&amp;ssl=1" alt=""/>
-            <h4 class="main-4__subtitle">Когнитивно — поведенческая терапия расстройств пищевого поведения</h4>
-            <div class="main-4__text">hghjgjgjfjjfhghghhghghhghghhghgh</div><a class="btn main-4__btn" href="">читать</a>
-          </div>
-          <div class="swiper-slide main-4__item"><img class="main-4__img" src="https://i0.wp.com/cnpp.ru/wp-content/uploads/2019/04/%D0%A4%D0%BE%D0%BD-dbt.jpg?resize=540%2C272&amp;ssl=1" alt=""/>
-            <h4 class="main-4__subtitle">Когнитивно — поведенческая терапия расстройств пищевого поведения</h4>
-            <div class="main-4__text">hghjgjgjfjjfhghghhghghhghghhghgh</div><a class="btn main-4__btn" href="">читать</a>
+      <div class="main-4__block">
+        <div class="swiper-container main-4__slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide main-4__item"><img class="main-4__img" src="https://i0.wp.com/cnpp.ru/wp-content/uploads/2019/04/%D0%A4%D0%BE%D0%BD-dbt.jpg?resize=540%2C272&amp;ssl=1" alt=""/>
+              <h4 class="main-4__subtitle">Когнитивно — поведенческая терапия расстройств пищевого поведения</h4>
+              <div class="main-4__text">hghjgjgjfjjfhghghhghghhghghhghgh</div><a class="btn main-4__btn" href="">читать</a>
+            </div>
+            <div class="swiper-slide main-4__item"><img class="main-4__img" src="https://i0.wp.com/cnpp.ru/wp-content/uploads/2019/04/%D0%A4%D0%BE%D0%BD-dbt.jpg?resize=540%2C272&amp;ssl=1" alt=""/>
+              <h4 class="main-4__subtitle">Когнитивно — поведенческая терапия расстройств пищевого поведения</h4>
+              <div class="main-4__text">hghjgjgjfjjfhghghhghghhghghhghgh</div><a class="btn main-4__btn" href="">читать</a>
+            </div>
+            <div class="swiper-slide main-4__item"><img class="main-4__img" src="https://i0.wp.com/cnpp.ru/wp-content/uploads/2019/04/%D0%A4%D0%BE%D0%BD-dbt.jpg?resize=540%2C272&amp;ssl=1" alt=""/>
+              <h4 class="main-4__subtitle">Когнитивно — поведенческая терапия расстройств пищевого поведения</h4>
+              <div class="main-4__text">hghjgjgjfjjfhghghhghghhghghhghgh</div><a class="btn main-4__btn" href="">читать</a>
+            </div>
+            <div class="swiper-slide main-4__item"><img class="main-4__img" src="https://i0.wp.com/cnpp.ru/wp-content/uploads/2019/04/%D0%A4%D0%BE%D0%BD-dbt.jpg?resize=540%2C272&amp;ssl=1" alt=""/>
+              <h4 class="main-4__subtitle">Когнитивно — поведенческая терапия расстройств пищевого поведения</h4>
+              <div class="main-4__text">hghjgjgjfjjfhghghhghghhghghhghgh</div><a class="btn main-4__btn" href="">читать</a>
+            </div>
+            <div class="swiper-slide main-4__item"><img class="main-4__img" src="https://i0.wp.com/cnpp.ru/wp-content/uploads/2019/04/%D0%A4%D0%BE%D0%BD-dbt.jpg?resize=540%2C272&amp;ssl=1" alt=""/>
+              <h4 class="main-4__subtitle">Когнитивно — поведенческая терапия расстройств пищевого поведения</h4>
+              <div class="main-4__text">hghjgjgjfjjfhghghhghghhghghhghgh</div><a class="btn main-4__btn" href="">читать</a>
+            </div>
+            <div class="swiper-slide main-4__item"><img class="main-4__img" src="https://i0.wp.com/cnpp.ru/wp-content/uploads/2019/04/%D0%A4%D0%BE%D0%BD-dbt.jpg?resize=540%2C272&amp;ssl=1" alt=""/>
+              <h4 class="main-4__subtitle">Когнитивно — поведенческая терапия расстройств пищевого поведения</h4>
+              <div class="main-4__text">hghjgjgjfjjfhghghhghghhghghhghgh</div><a class="btn main-4__btn" href="">читать</a>
+            </div>
+            <div class="swiper-slide main-4__item"><img class="main-4__img" src="https://i0.wp.com/cnpp.ru/wp-content/uploads/2019/04/%D0%A4%D0%BE%D0%BD-dbt.jpg?resize=540%2C272&amp;ssl=1" alt=""/>
+              <h4 class="main-4__subtitle">Когнитивно — поведенческая терапия расстройств пищевого поведения</h4>
+              <div class="main-4__text">hghjgjgjfjjfhghghhghghhghghhghgh</div><a class="btn main-4__btn" href="">читать</a>
+            </div>
           </div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="main-4__button main-4__button-left swiper-button-prev">‹</div>
+        <div class="main-4__button main-4__button-right swiper-button-next">›</div>
       </div>
     </div>
   </section>

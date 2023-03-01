@@ -1,10 +1,8 @@
 "use strict";
-/*
-
-  Может стоит переделать на data-event=""
-
-*/
-
+let sub = document.querySelectorAll('.menu > .menu-item-has-children > .sub-menu');
+let btn = document.querySelectorAll('.header .menu > .menu-item-has-children');
+let nav = document.querySelectorAll('.header__center');
+let burgerMenu = document.querySelector('.header__menu');
 function ClickSelector(element, className) {
   try {
     if (element.classList.contains(className)) {
@@ -17,88 +15,117 @@ function ClickSelector(element, className) {
   }
 }
 
+
+let burger_status = ''; // '' || 'active' || 'active-sub'
+
 function documentClicks() {
   document.addEventListener('click', function (e) {
 
-    // Все действия с этом блоке зависят от element
     let
       target = e.target,
       element = false;
 
-    // Пример на все случаи
-    // if (document.querySelector('.select')) {
-    //   element = ClickSelector(target, 'select');
-    //   if (element) {
-    //     #code...
-    //   } else {
-    //     selectClose();
-    //     document.querySelector('.selector').classList.remove('active');
-    //   }
-    // }
+    if (!(window.innerWidth >= 1170)) {
+      if (document.querySelector('#nav')) {
+        element = ClickSelector(target, 'e_toggle');
+        if (element) {
 
-    // if (document.querySelector('#menu')) {
-    //   element = ClickSelector(target, 'e_menu');
-    //   if (element) {
-    //     modalToggle('menu');
-    //     element.classList.toggle('active');
-    //   }
-    //   element = ClickSelector(target, 'e_menu_close');
-    //   if (element) {
-    //     modalClose('menu');
-    //     document.querySelector('.header__menu').classList.remove('active');
-    //   }
-    //   element = ClickSelector(target, 'menu-nav');
-    //   if (element) {
-    //     modalClose('menu');
-    //     document.querySelector('.header__menu').classList.remove('active');
-    //   }
-    // }
+          if (burger_status === 'active-sub') {
+            burger_status = 'active';
+            sub.forEach(el => { el.classList.add('hd') });
+            element.classList.remove('active-sub');
+            return '';
+          }
 
+          if (burger_status === 'active') {
+            burger_status = '';
+            modalToggle('nav');
+            element.classList.toggle('active');
+            return '';
+          }
 
-    // if (document.querySelector('#pet')) {
-    //   element = ClickSelector(target, 'e_pet');
-    //   if (element) {
-    //     modalOpen('pet');
-    //   }
-    //   element = ClickSelector(target, 'e_pet_close');
-    //   if (element) {
-    //     modalClose('pet');
-    //   }
-    // }
+          if (burger_status === '') {
+            burger_status = 'active';
+            modalOpen('nav');
+            element.classList.add('active');
+            return '';
+          }
+
+        } else {
+          if (!target.closest('#nav')) {
+            burger_status = '';
+            modalClose('nav');
+            document.querySelector('.header__menu').classList.remove('active');
+          }
+        }
+      }
+
+      if (document.querySelector('.sub-menu')) {
+        element = ClickSelector(target, 'toggle-btn');
+        if (element) {
+          burger_status = 'active-sub';
+          document.querySelector('html').classList.add('overflow-hidden');
+          element.querySelector('.sub-menu').classList.remove('hd');
+          document.querySelector('.header__menu').classList.add('active-sub');
+        }
+      }
+    }
   });
 }
 
 
-/* BEGIN BASE FUNCTIONS */
+  /* BEGIN BASE FUNCTIONS */
 
-// modal
-function modalOpen(eID) {
+  // modal
+  function modalOpen(eID) {
   document.querySelector('html').classList.add('overflow-hidden');
   let element = document.getElementById(eID);
-  element.classList.remove('hidden');
+  element.classList.remove('hd');
 }
 function modalClose(eID) {
   document.querySelector('html').classList.remove('overflow-hidden');
   let element = document.getElementById(eID);
-  element.classList.add('hidden');
+  element.classList.add('hd');
 }
 function modalToggle(eID) {
   document.querySelector('html').classList.toggle('overflow-hidden');
   let element = document.getElementById(eID);
-  element.classList.toggle('hidden');
+  element.classList.toggle('hd');
 }
 /* END BASE FUNCTIONS */
 
-//fixed header
-window.addEventListener('scroll', function (e) {
+
+const addHidden = (elements) => {
+  if (window.innerWidth >= 1170) {
+    elements.forEach(element => {
+      element.classList.remove('hd');
+    })
+  } else {
+    elements.forEach(element => {
+      element.classList.add('hd');
+    })
+  }
+}
+
+const addBtn = () => {
+  if (!(window.innerWidth >= 1170)) {
+    btn.forEach(element => {
+      element.classList.add('toggle-btn');
+    })
+  } else {
+    btn.forEach(element => {
+      element.classList.remove('toggle-btn');
+    })
+  }
+}
+
+function fixedHeader() {
   if (document.querySelector('html').scrollTop > 0) {
     document.querySelector('header').classList.add("fixed");
-    document.querySelector('body').classList.add("h-f");
   } else {
     document.querySelector('header').classList.remove("fixed");
-    document.querySelector('body').classList.remove("h-f");
   }
-});
+}
 
 function footer() {
   if (document.querySelector('footer')) {
@@ -111,12 +138,20 @@ function currentYear() {
   year.innerHTML = new Date().getFullYear();
 }
 
+//fixed header
+window.addEventListener('scroll', function (e) {
+  fixedHeader();
+});
 
 // General code before loading page
 document.addEventListener('DOMContentLoaded', function () {
 
   (function () { // base functions
     documentClicks();
+    fixedHeader();
+    addHidden(nav);
+    addHidden(sub);
+    addBtn();
     footer();
     currentYear();
 
@@ -150,16 +185,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function menuRemove() {
-  modalClose('menu')
+  modalClose('nav')
   document.querySelector('.header__menu').classList.remove('active');
+  addHidden(nav);
 }
 
 window.addEventListener('resize', function () {
+  addBtn();
+  addHidden(nav);
+  addHidden(sub);
+  menuRemove();
   footer();
-
-  if (window.innerWidth >= 767) {
-    menuRemove();
-  }
 });
 
 
