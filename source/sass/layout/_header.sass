@@ -13,6 +13,12 @@
     top: 0
     & ~ .section-first
       margin-top: 0
+  &:not(.fixed)
+    & .header__center
+      @media (max-width: 1170px)
+        top: 44px
+      @media (max-width: 767px)
+        top: 65.2px
   & .menu
     +center
     gap: 40px
@@ -22,14 +28,28 @@
       font-size: 14px
     @media (max-width: 1250px)
       gap: 25px
+    @media (max-width: 1170px)
+      align-items: flex-start
+      flex-direction: column
+    @media (max-width: 767px)
+      gap: 18px
     &-item
       position: relative
       & > a
         text-transform: uppercase
         transition: $transition
+        @media (max-width: 1440px)
+          font-size: 13px
+        &:hover
+          color: $color_primary_light
+      &-has-children > a
+        position: relative
+        display: flex !important
+        align-items: center
+        gap: 6px
       &:hover > ul
-        visibility: visible
-        opacity: 1
+        visibility: visible!important
+        opacity: 1!important
   &-logo
     display: block
     max-width: 270px
@@ -47,13 +67,183 @@
     display: flex
     align-items: center
     gap: 20px
-  &__right, &__center
+  &__right
     @media (max-width: 1170px)
       display: none
+  &__center
+    @media (max-width: 1170px)
+      display: block
+      position: fixed
+      right: 0
+      top: 0
+      bottom: 0
+      background: #fff
+      width: -webkit-max-content
+      width: -moz-max-content
+      width: max-content
+      padding: 94.42px calc((100% - 740px) / 2 + 15px)22px 40px
+    @media (max-width: 767px)
+      padding: 80px 15px 15px
+    &.hd
+      z-index: -1
+      visibility: hidden
+      display: inherit
+      opacity: 0
   &__btn
     font-size: 16px!important
     @media (max-width: 1350px)
       font-size: 14px!important
+
+.menu
+  & > .menu-item-has-children
+    & > a
+      display: flex !important
+      align-items: center
+      &::after
+        content: "›"
+        display: block
+        transform: rotate(90deg)
+        margin-left: 8px
+    & > .sub-menu, &.mega-menu > .sub-menu
+      @media(max-width: 1170px)
+        position: fixed
+        visibility: visible!important
+        display: flex
+        flex-direction: column
+        opacity: 1!important
+        padding: 22px 28px
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        width: 100%
+        z-index: 40
+        &.hd
+          @media(max-width: 1170px)
+            z-index: -1
+            visibility: hidden!important
+            display: inherit
+            opacity: 0!important
+    &.mega-menu
+      & > .sub-menu
+        position: absolute
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
+        gap: 15px
+        visibility: hidden
+        opacity: 0
+        z-index: 1
+        padding: 15px 10px
+        width: -moz-max-content
+        width: 90vw
+        left: calc(50% - 45vw - 30px)
+        top: 52px
+        background: #fff
+        box-shadow: 4px 4px 20px rgb(18 23 31 / 10%)
+        transition: $transition
+        & > .menu-item
+          &.menu-item-has-children
+            & > a::after
+              content: none
+              @media (max-width: 1170px)
+                content: "›"
+                display: block
+                transform: rotate(90deg)
+                margin-left: 8px
+            & > .sub-menu
+              position: unset!important
+              visibility: visible!important
+              opacity: 1
+              box-shadow: none
+              padding-bottom: 0
+              & a
+                font-size: 12px
+          & > a
+            pointer-events: none
+            color: $color_primary_dark
+            font-size: 12px
+            font-weight: 700
+
+.sub-menu
+  display: block
+  position: absolute
+  width: max-content
+  top: 36px
+  left: -20px
+  padding-bottom: 8px
+  box-shadow: rgb(0 0 0 / 12%) 0 2px 2px
+  background: #fff
+  margin-bottom: 0
+  visibility: hidden
+  opacity: 0
+  z-index: 1
+  transition: $transition
+  & > li > a
+    display: block
+    padding: 8px 20px
+    font-size: 14px
+    color: $color_title_1
+    text-indent: 0
+    height: auto
+    transition: $transition
+
+.header__menu
+  display: none
+  position: relative
+  cursor: pointer
+  margin: auto 0
+  width: 50px
+  height: 50px
+  @media (max-width: 1170px)
+    display: flex
+  &.active-sub
+    position: fixed
+    width: 24px
+    height: 24px
+    +bg-center
+    top: 10px
+    right: 10px
+    background-image: url(../img/close.svg)
+    & div
+      display: none
+  &.active
+    margin-right: 9px
+    & div
+      background: none
+      &::before, &::after
+        background: $color_primary_bright
+      &::before
+        transform: rotate(-45deg)
+        top: 50%
+      &::after
+        transform: rotate(45deg)
+        bottom: calc(50% - 2px)
+  & div
+    width: 30px
+    height: 2px
+    margin: auto
+    background: $color_primary_dark
+    cursor: pointer
+    transition: $transition
+    &::after, &::before
+      content: ''
+      position: absolute
+      display: block
+      width: 30px
+      height: 2px
+      background: $color_primary_dark
+      transition: $transition
+    &::before
+      top: 15px
+    &::after
+      bottom: 15px
+
+.menu-icon
+  display: block
+  width: 25px
+  height: 25px
+  +bg
+  background-image: url(../img/profile.svg)
 
 .info
   padding: 10px 0
@@ -86,70 +276,3 @@
       display: flex
       flex-wrap: wrap
       font-size: $size_text_mob
-
-.menu-item-has-children
-  & > a
-    display: flex !important
-    align-items: center
-    &::after
-      content: "›"
-      display: block
-      transform: rotate(90deg)
-      margin-left: 8px
-
-.sub-menu
-  display: block
-  position: absolute
-  width: max-content
-  top: 36px
-  left: -20px
-  padding-bottom: 8px
-  box-shadow: rgb(0 0 0 / 12%) 0 2px 2px
-  background: #fff
-  margin-bottom: 0
-  visibility: hidden
-  opacity: 0
-  z-index: 1
-  transition: $transition
-  & > li > a
-    display: block
-    padding: 8px 20px
-    font-size: 14px
-    color: #262729
-    text-indent: 0
-    height: auto
-    transition: $transition
-
-.header__menu
-  display: none
-  position: relative
-  cursor: pointer
-  margin: auto 0
-  width: 50px
-  height: 50px
-  @media (max-width: 1170px)
-    display: flex
-  & div
-    width: 30px
-    height: 2px
-    margin: auto
-    background: $color_primary_dark
-    cursor: pointer
-    &::after, &::before
-      content: ''
-      position: absolute
-      display: block
-      width: 30px
-      height: 2px
-      background: $color_primary_dark
-    &::before
-      top: 15px
-    &::after
-      bottom: 15px
-
-.menu-icon
-  display: block
-  width: 25px
-  height: 25px
-  +bg
-  background-image: url(../img/profile.svg)

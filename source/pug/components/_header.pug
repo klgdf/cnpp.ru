@@ -19,15 +19,35 @@ header.header
     .header__left
       a(href="").header-logo
         img(src="./assets/img/logo.svg" alt="Центр научно-практической психологии Dialectica" data-retina_logo_url="./assets/img/logo.svg").header-logo__link
-    .header__center
+    .header__center#nav
       nav.header-menu
         ul.menu
           li.menu-item.menu__item
             a(href="") О центре
           li.menu-item.menu__item
             a(href="") Специалисты
-          li.menu-item.menu__item
+          li.menu-item.menu__item.menu-item-has-children.mega-menu
             a(href="") Расстройства
+            ul.sub-menu
+              li.menu-item.menu-item-has-children
+                a(href='') Тревожные расстройства
+                ul.sub-menu
+                  li.menu-item
+                    a(href='') Паническое расстройство
+              li.menu-item.menu-item-has-children
+                a(href='') Расстройство настроения
+                ul.sub-menu
+                  li.menu-item
+                    a(href='') Депрессия 
+              li.menu-item.menu-item-has-children
+                a(href='') Расстройства пищевого поведения
+                ul.sub-menu
+                  li.menu-item
+                    a(href='') Булимия
+              li.menu-item
+                a(href='') Осложненное посттравматическое стрессовое расстройство (кПТСР)
+              li.menu-item
+                a(href='') Пограничное расстройство личности (ПРЛ)
           li.menu-item.menu__item.menu-item-has-children
             a(href="") Клиенту
             ul.sub-menu
@@ -46,7 +66,7 @@ header.header
     .header__right
         a(href="").btn.header__btn Запись на прием
         a(href="").menu-icon
-    .header__menu.e_menu
+    .header__menu.e_toggle
       div
 
 

@@ -1,36 +1,58 @@
 "use strict";
 @@include('common/clicks.js')
 
-/* BEGIN BASE FUNCTIONS */
+  /* BEGIN BASE FUNCTIONS */
 
-// modal
-function modalOpen(eID) {
+  // modal
+  function modalOpen(eID) {
   document.querySelector('html').classList.add('overflow-hidden');
   let element = document.getElementById(eID);
-  element.classList.remove('hidden');
+  element.classList.remove('hd');
 }
 function modalClose(eID) {
   document.querySelector('html').classList.remove('overflow-hidden');
   let element = document.getElementById(eID);
-  element.classList.add('hidden');
+  element.classList.add('hd');
 }
 function modalToggle(eID) {
   document.querySelector('html').classList.toggle('overflow-hidden');
   let element = document.getElementById(eID);
-  element.classList.toggle('hidden');
+  element.classList.toggle('hd');
 }
 /* END BASE FUNCTIONS */
 
-//fixed header
-window.addEventListener('scroll', function (e) {
+
+const addHidden = (elements) => {
+  if (window.innerWidth >= 1170) {
+    elements.forEach(element => {
+      element.classList.remove('hd');
+    })
+  } else {
+    elements.forEach(element => {
+      element.classList.add('hd');
+    })
+  }
+}
+
+const addBtn = () => {
+  if (!(window.innerWidth >= 1170)) {
+    btn.forEach(element => {
+      element.classList.add('toggle-btn');
+    })
+  } else {
+    btn.forEach(element => {
+      element.classList.remove('toggle-btn');
+    })
+  }
+}
+
+function fixedHeader() {
   if (document.querySelector('html').scrollTop > 0) {
     document.querySelector('header').classList.add("fixed");
-    document.querySelector('body').classList.add("h-f");
   } else {
     document.querySelector('header').classList.remove("fixed");
-    document.querySelector('body').classList.remove("h-f");
   }
-});
+}
 
 function footer() {
   if (document.querySelector('footer')) {
@@ -43,12 +65,20 @@ function currentYear() {
   year.innerHTML = new Date().getFullYear();
 }
 
+//fixed header
+window.addEventListener('scroll', function (e) {
+  fixedHeader();
+});
 
 // General code before loading page
 document.addEventListener('DOMContentLoaded', function () {
 
   (function () { // base functions
     documentClicks();
+    fixedHeader();
+    addHidden(nav);
+    addHidden(sub);
+    addBtn();
     footer();
     currentYear();
 
@@ -82,16 +112,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function menuRemove() {
-  modalClose('menu')
+  modalClose('nav')
   document.querySelector('.header__menu').classList.remove('active');
+  addHidden(nav);
 }
 
 window.addEventListener('resize', function () {
+  addBtn();
+  addHidden(nav);
+  addHidden(sub);
+  menuRemove();
   footer();
-
-  if (window.innerWidth >= 767) {
-    menuRemove();
-  }
 });
 
 

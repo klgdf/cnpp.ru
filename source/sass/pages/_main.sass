@@ -124,7 +124,7 @@
   &__big-btn
     margin-bottom: 30px
     @media (max-width: 539px)
-      margin-bottom: 15px
+      margin-bottom: 10px
   &__btn
     @media ((max-width: 1100px) and (min-width: 1024px))
       padding: 12px 18px
@@ -202,7 +202,10 @@
       margin: 35px auto 0
 
 .main-4
+  &__block
+    position: relative
   &__slider
+    position: relative
     overflow: hidden
   &__img
     margin-bottom: 20px
@@ -212,4 +215,39 @@
     margin-bottom: 10px
   &__text
     margin-bottom: 20px
+  &__button
+    position: absolute
+    +center
+    width: 40px
+    height: 40px
+    font-weight: 500
+    color: $color_primary_light
+    font-size: 28px
+    border-radius: 3px
+    border-color: $color_primary_light
+    border-width: 1px
+    top: calc(50% - 40px)
+    background: #fff
+    cursor: pointer
+    transition: $transition
+    @media (max-width: 425px)
+      top: calc(50% - 64px)
+    &:hover, &:active
+      border-color: $color_primary_dark
+      color: $color_primary_dark
+    &:active
+      border-width: 2px
+    &.swiper-button-disabled
+      display: none
+    &-left
+      left: -20px
+      @media (max-width: 767px)
+        left: -10px
+    &-right
+      right: -20px
+      @media (max-width: 767px)
+        right: - 10px
+  &__btn
+    @media (max-width: 680px)
+      margin: 0 auto
 

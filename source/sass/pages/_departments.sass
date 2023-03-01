@@ -2,12 +2,13 @@
   background-image: url(https://cnpp.ru/wp-content/uploads/2016/01/header-image-departments.jpg)
 
 .departments
-  padding-top: 100px
+  padding-top: 80px
   +bg
   background-image: url(../img/departments.png)
   color: #fff
   @media (max-width: 767px)
     padding-top: 40px!important
+    background-image: none
   &__grid
     display: grid
     grid-template-columns: repeat(2, 1fr)
@@ -15,6 +16,9 @@
     @media (max-width: 767px)
       grid-template-columns: repeat(1, 1fr)
       margin: 0 -15px
+  &__row
+    @media (max-width: 767px)
+      color: $color_title_1
   &__item
     padding: 40px 32px
     text-align: center
@@ -55,6 +59,7 @@
     color: #fff!important
     @media (max-width: 767px)
       margin-bottom: 20px!important
+      color: $color_primary_dark!important
   &__subtitle
     font-size: 24px
     line-height: 1.17

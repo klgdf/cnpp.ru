@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  include components/_head
+
+</head>
+<body>
+
+  .wrapper.fix-footer
+
+    include components/_header
+
+    section.section.section-first
+      .container.specialists
+        h1.title.title-h1.specialists__title Специалисты ЦНПП DIALECTICA
+        .specialists__row
+          a(href="").btn Записаться на прием
+          a(href="").btn Подобрать специалиста
+        .specilists__grid.items-grid
+          - for (var i = 0; i < 10; ++i)
+            include ./components/_item
+
+
+    include components/_form
+
+    include components/_footer
+
+    include components/_scripts
+
+</body>
+</html>

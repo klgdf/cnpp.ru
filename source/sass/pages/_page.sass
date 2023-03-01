@@ -1,0 +1,60 @@
+.page-1
+  background-image: url(https://cnpp.ru/wp-content/uploads/2015/12/header-cardiology.jpg)
+  @media (max-width: 767px)
+    background-position: center
+
+.page
+  & .specialist
+    max-width: 1860px
+    & .title-h1
+      font-size: 28px
+      margin-bottom: 10px
+    & .title-h2
+      font-size: 20px
+  & .bold
+    +manrope
+    font-weight: 700
+  &__row
+    display: flex
+    gap: 40px
+    @media (max-width: 767px)
+      flex-direction: column
+      gap: 20px
+  &__note
+    flex: 0 1 70%
+    padding: 20px 30px
+    border: 1px solid #dddddd
+  &__right
+    flex: 0 1 30%
+    @media (max-width: 767px)
+      padding: 20px
+      border: 1px solid #dddddd
+  &__line
+    margin-bottom: 25px
+    &:last-child
+      margin-bottom: 0
+  &__subtitle
+    color: $color_primary_dark
+    font-size: 20px
+    text-align: center
+    border-bottom: 1px solid $color_primary_dark
+    padding-bottom: 2px
+    margin-bottom: 15px
+  &__table
+    &-row
+      display: flex
+      justify-content: center
+      gap: 15px
+      margin-bottom: 10px
+      &:last-child
+        margin-bottom: 0
+    &-left
+      +manrope
+      font-weight: 700
+  &__text
+    & .btn
+      margin: 0 auto
+    & .text-link
+      display: block
+      text-align: center
+      font-size: 18px
