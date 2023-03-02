@@ -87,7 +87,7 @@ body
     margin-top: 84.42px
     transition: $transition
     @media (max-width: 1170px)
-      margin-top: 79.5px
+      margin-top: 84.42px
     @media (max-width: 767px)
       margin-top: 70px
 
@@ -257,6 +257,8 @@ textarea
   @media (max-width: 991px)
     height: calc(100vh - 135.2px)
   &__block
+    position: relative
+    z-index: 1
     max-width: 570px
     margin: 0 auto
     @media (max-width: 767px)
@@ -366,3 +368,35 @@ summary
   position: absolute
   top: -84.42px
 
+.section-pos
+  position: relative
+  z-index: 3
+  background: #fff
+
+.section-departments
+  position: relative
+  z-index: 4
+
+.header.fixed ~ section
+  & .main-1__img, & .first-template__img
+    top: 84.42px
+    @media (max-width: 767px)
+      top: 70px
+
+.main-1, .first-template
+  position: relative
+  overflow: hidden
+
+.main-1__img, .first-template__img
+  object-fit: cover
+  position: fixed
+  bottom: 0
+  right: 0
+  left: 0
+  top: 128.42px
+  z-index: 1
+  height: 100%
+  width: 100%
+  transition: $transition
+  @media (max-width: 767px)
+    top: 135.2px

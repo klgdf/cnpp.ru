@@ -1,14 +1,39 @@
-.departments-1
-  background-image: url(https://cnpp.ru/wp-content/uploads/2016/01/header-image-departments.jpg)
+.department
+  & .section-departments
+    & .departments
+      &::before
+        background: #e9eaee
 
 .departments
+  position: relative
   padding-top: 80px
-  +bg
-  background-image: url(../img/departments.png)
   color: #fff
+  padding-bottom: 125px
   @media (max-width: 767px)
     padding-top: 40px!important
     background-image: none
+    background: #fff
+    padding-bottom: 0
+  &::after
+    +bg
+    background-image: url(../img/departments.png)
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: -2
+  &::before
+    background: $bg_grey
+    height: 125px
+    bottom: 0
+    z-index: -1
+  &::after, &::before
+    content: ''
+    position: absolute
+    right: 0
+    left: 0
+    bottom: 0
+    @media (max-width: 767px)
+      content: none
   &__grid
     display: grid
     grid-template-columns: repeat(2, 1fr)

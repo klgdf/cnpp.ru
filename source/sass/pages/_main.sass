@@ -1,17 +1,13 @@
 .main-1
   padding: 115px 0
   color: #fff
-  +bg
-  background-image: url(../img/bg-first.png)
-  background-position: center
   @media (max-width: 1024px)
     padding: 50px 0
-    background-position: 34%
-  @media (max-width: 680px)
-    background-position: left
   @media (max-width: 767px)
     padding: 40px 0
   & .container
+    position: relative
+    z-index: 2
     display: flex
     flex-wrap: nowrap
     justify-content: space-between
@@ -186,7 +182,7 @@
       max-width: 100%
 
 .main-3
-  padding: 175px 0 50px
+  padding: 50px 0
   background: $bg_grey
   @media (max-width: 767px)
     padding: 40px 0
@@ -250,4 +246,3 @@
   &__btn
     @media (max-width: 680px)
       margin: 0 auto
-
